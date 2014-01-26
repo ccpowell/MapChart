@@ -1,0 +1,31 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Map</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <div class="container">
+        <div class="btn-group" id="subjects">
+            <button type="button" class="btn btn-default btn-lg" data-subject="windows">Windows</button>
+            <button type="button" class="btn btn-default btn-lg" data-subject="office">Office</button>
+            <button type="button" class="btn btn-default btn-lg" data-subject="phone">Phone</button>
+            <button type="button" class="btn btn-default btn-lg" data-subject="xbox">Xbox</button>
+        </div>
+    </div>
+    <div class="container">
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/app")
+</body>
+</html>

@@ -199,6 +199,12 @@
     <Content Include="Scripts\modernizr-2.7.1.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Site\charts.bar.js" />
+    <Content Include="Scripts\Site\charts.timeseries.js" />
+    <Content Include="Scripts\Site\charts.map.js" />
+    <Content Include="Scripts\Site\charts.js" />
+    <Content Include="Scripts\Site\main.js" />
+    <Content Include="Scripts\Site\app.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -215,6 +221,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-2.1.0.min.map" />
+    <Content Include="Views\Home\Map.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

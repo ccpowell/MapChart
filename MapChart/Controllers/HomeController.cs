@@ -14,5 +14,11 @@ namespace MapChart.Controllers
 
             return View();
         }
+        public ActionResult Map()
+        {
+            ViewBag.Title = "Map and Charts";
+
+            return View();
+        }
     }
 }

@@ -20,6 +20,15 @@ namespace MapChart
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+
+            bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                      "~/Scripts/Site/app.js",
+                      "~/Scripts/Site/charts.js",
+                      "~/Scripts/Site/charts.bar.js",
+                      "~/Scripts/Site/charts.timeseries.js",
+                      "~/Scripts/Site/charts.map.js",
+                      "~/Scripts/Site/main.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
