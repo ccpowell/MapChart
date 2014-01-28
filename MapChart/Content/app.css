@@ -1,0 +1,36 @@
+﻿.ot-barchart
+{
+    width: 350px;
+    height: 350px;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+
+.ot-timeseries
+{
+    width: 750px;
+    height: 250px;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+
+.ot-map
+{
+    width: 750px;
+    height: 600px;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+
+div#map-column
+{
+    position: absolute;
+    width: 750px;
+}
+
+div#charts
+{
+    position: absolute;
+    left: 760px;
+    width: 350px;
+}

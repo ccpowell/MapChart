@@ -1,33 +1,32 @@
-﻿/*jslint devel: true, browser: true */
+﻿/*jslint devel: true, browser: true, unparam: true */
 /*global jQuery: false */
 
 var app = (function ($) {
     'use strict';
     var chartsContainer = $('#charts'),
+        mapContainer = $('#map-column'),
         charts = [],
         map = null,
         timeseries = null,
         currentTopic;
 
-    // we keep all of the components after creating them,
-    // we just show or hide them.
-    function initialize() {
-        app.main.initialize();
-
-        // create map
-
-        // create timeseries
-    }
 
     // remove all charts from the charts section
     // configure components
     function topicChanged(name) {
-        alert('new topic is ' + name);
+        var element;
         currentTopic = app.topics[name];
 
         // clear map
+        if (map) {
+            map.destroy();
+        }
 
         // clear timeseries
+        if (timeseries) {
+            timeseries.destroy();
+        }
+        mapContainer.empty();
 
         // clear charts
         $.each(charts, function (index, chart) {
@@ -36,14 +35,27 @@ var app = (function ($) {
         charts = [];
         chartsContainer.empty();
 
+        // create map
+        element = $('<div/>').appendTo(mapContainer);
+        map = new app.charts.Map(element, currentTopic.mapOptions);
+
+        // create timeseries
+        element = $('<div/>').appendTo(mapContainer);
+        timeseries = new app.charts.TimeSeries(element, currentTopic.timeseriesOptions);
+
         // add required chart containers and configure charts
         $.each(currentTopic.charts, function (index, configuration) {
-            var element, chart;
+            var chart;
             element = $('<div/>').appendTo(chartsContainer);
-            configuration.element = element;
-            chart = new app.charts[configuration.type](configuration);
+            chart = new app.charts[configuration.type](element, configuration);
             charts.push(chart);
         });
+    }
+
+
+    function initialize() {
+        app.main.initialize();
+        $('#topics button:first').click().focus();
     }
 
     // set it

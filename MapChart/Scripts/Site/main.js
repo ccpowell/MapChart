@@ -1,22 +1,22 @@
-﻿/*jslint devel: true, browser: true */
+﻿/*jslint devel: true, browser: true, unparam: true */
 /*global jQuery: false, app: false */
 
 app.main = (function ($) {
     'use strict';
 
     function initialize() {
-        var i, topic, button, topics = $('#topics');
-        // create a button for each topic
-        // <button type="button" class="btn btn-default btn-lg" data-topic="windows">Windows</button>
-        for (i = 0; i < app.topics.buttons.length; i += 1) {
-            topic = app.topics.buttons[i];
-            button = $('<button type="button" class="btn btn-default btn-lg" data-topic="windows"></button>')
-                .data('topic', topic.key)
-                .text(topic.label);
-            button.appendTo(topics);
-        }
+        var topics = $('#topics');
 
-        $('button', topics).click(function () {
+        // create a button for each topic
+        $.each(app.topics.buttons, function (index, topic) {
+            $('<button type="button" class="btn btn-default btn-lg"></button>')
+                .data('topic', topic.key)
+                .text(topic.label)
+                .appendTo(topics);
+        });
+
+        // change the topic when a button is clicked
+        topics.on('click', 'button', function () {
             var tpc = $(this).data('topic');
             app.topicChanged(tpc);
             return false;

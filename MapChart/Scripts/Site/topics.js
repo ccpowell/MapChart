@@ -6,18 +6,19 @@
 //  1. a map
 //  2. a timeseries
 //  3. some charts
-app.topics = (function ($) {
+app.topics = (function () {
     'use strict';
-    var stuff = {buttons:[]};
+    var stuff = { buttons: [] };
     function addTopic(topic) {
         stuff[topic.key] = topic;
         stuff.buttons.push(topic);
     }
 
-    addTopic ({
+    addTopic({
         key: 'windows',
         label: 'Windows',
         mapOptions: {},
+        timeseriesOptions: {},
         charts: [{
             type: 'BarChart',
             labelX: 'X',
@@ -26,26 +27,44 @@ app.topics = (function ($) {
             type: 'BarChart',
             labelX: 'X',
             labelY: 'Y'
-        }
-        ]
+        }]
     });
-    addTopic ({
-            key: 'office',
-            label: 'Office',
-            mapOptions: {},
-            charts: []
+    addTopic({
+        key: 'office',
+        label: 'Office',
+        mapOptions: {},
+        timeseriesOptions: {},
+        charts: [{
+            type: 'BarChart',
+            labelX: 'X',
+            labelY: 'Y'
+        }]
     });
-    addTopic ({
-            key: 'phone',
-            label: 'Phone',
-            mapOptions: {},
-            charts: []
+    addTopic({
+        key: 'phone',
+        label: 'Phone',
+        mapOptions: {},
+        timeseriesOptions: {},
+        charts: [{
+            type: 'BarChart',
+            labelX: 'X',
+            labelY: 'Y'
+        }, {
+            type: 'BarChart',
+            labelX: 'X',
+            labelY: 'Y'
+        }]
     });
-    addTopic ({
-            key: 'xbox',
-            label: 'XBox',
-            mapOptions: {},
-            charts: []
+    addTopic({
+        key: 'xbox',
+        label: 'XBox',
+        mapOptions: {},
+        timeseriesOptions: {},
+        charts: [{
+            type: 'BarChart',
+            labelX: 'X',
+            labelY: 'Y'
+        }]
     });
 
     return stuff;
