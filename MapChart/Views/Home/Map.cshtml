@@ -14,15 +14,45 @@
 <body>
 
     <div class="container">
-        <div class="btn-group" id="subjects">
-            <button type="button" class="btn btn-default btn-lg" data-subject="windows">Windows</button>
-            <button type="button" class="btn btn-default btn-lg" data-subject="office">Office</button>
-            <button type="button" class="btn btn-default btn-lg" data-subject="phone">Phone</button>
-            <button type="button" class="btn btn-default btn-lg" data-subject="xbox">Xbox</button>
+        <div class="btn-group" id="topics">
         </div>
     </div>
     <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8">
+                <div style="width: 100%; height: 700px; background-color: #b6ff00;">
+                    map
+                </div>
+                <div style="width: 100%; height: 200px; background-color: #ff6a00;">
+                    time series
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4" id="charts">
+                <div style="width: 100%; height: 1000px; background-color: #ffd800;">
+                    charts
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div class="hidden">
+        <div id="template-map">
+            <div class="ot-map">
+                this is a map
+            </div>
+        </div>
+        <div id="template-timeseries">
+            <div class="ot-timeseries">
+                this is a timeseries
+            </div>
+        </div>
+        <div id="template-barchart">
+            <div class="ot-barchart">
+                this is a barchart
+            </div>
+        </div>
+    </div>
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

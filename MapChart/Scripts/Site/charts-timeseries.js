@@ -8,6 +8,10 @@ app.charts.TimeSeries = (function ($) {
         alert('hi');
     }
 
+    ctor.prototype.destroy = function () {
+
+    }
+
     // set it
     return ctor;
 }(jQuery));

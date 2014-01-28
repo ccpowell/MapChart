@@ -3,9 +3,17 @@
 
 app.charts.Map = (function ($) {
     'use strict';
+    var template = $('#template-map');
 
     function ctor(options) {
-        alert('hi');
+        console.log('new Map');
+
+        this.element = options.element;
+        this.element.html(template.clone());
+    }
+
+    ctor.prototype.destroy = function () {
+
     }
 
     // set it
