@@ -8,7 +8,8 @@ var app = (function ($) {
         charts = [],
         map = null,
         timeseries = null,
-        currentTopic;
+        currentTopic,
+        currentView;
 
 
     // remove all charts from the charts section
@@ -52,6 +53,20 @@ var app = (function ($) {
         });
     }
 
+    // The view contains:
+    //   subdivision id (world if null)
+    //   topic
+    //   filter 
+    function setView(view) {
+        var oldView = currentView;
+
+        // clear map, charts, timeseries
+
+        // if new shapes are required, get them
+
+        // get data for the view
+        
+    }
 
     function initialize() {
         app.main.initialize();
